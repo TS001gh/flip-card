@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Example = () => {
   return (
-    <motion.div className="grid w-full place-content-center bg-gradient-to-br from-indigo-500 to-violet-500 px-4 py-12 text-slate-900">
+    <motion.div className="grid w-full h-4/5 rounded-lg drop-shadow-2xl shadow-2xl place-content-center bg-gradient-to-br from-indigo-500 to-violet-500 px-4 py-12 text-slate-900">
       <TiltCard />
     </motion.div>
   );
@@ -45,7 +45,7 @@ const TiltCard = () => {
   };
   const handleClick = () => {
     if (!ref.current) return;
-    setRotateY(-180); // تم تغيير هذا السطر لتعكس الوجه الخلفي بشكل صحيح
+    setRotateY(rotateY !== -180 ? -180 : 0); // تم تغيير هذا السطر لتعكس الوجه الخلفي بشكل صحيح
     setIsFlipped((state) => !state);
   };
 
@@ -80,7 +80,7 @@ const TiltCard = () => {
           transform: "scale(-1, 1)", // تعديل هنا لعكس النص
         }}
       >
-        HOVER ME
+        How Are You
       </div>
     </motion.div>
   );
