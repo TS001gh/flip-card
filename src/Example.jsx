@@ -46,7 +46,7 @@ const TiltCard = () => {
   const handleClick = () => {
     if (!ref.current) return;
     setRotateY(-180); // تم تغيير هذا السطر لتعكس الوجه الخلفي بشكل صحيح
-    setIsFlipped(true);
+    setIsFlipped((state) => !state);
   };
 
   return (
